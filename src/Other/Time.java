@@ -1,5 +1,9 @@
 package Other;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Time {
 	/**
 	 * 将相对于2013-07-01 00:00:00的时间转化回具体的"yyyy-MM-dd HH:mm:ss"格式的时间
@@ -97,6 +101,22 @@ public class Time {
 		int second = Integer.parseInt(temp1[2]);
 		t += hour * 60 + minute;
 		return t;
+	}
+
+	/**
+	 * 时间标准化,
+	 * @param s
+	 * @return long型时间
+	 * @throws ParseException
+     */
+	public long uniformTime(String s) throws ParseException {
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+
+		long TIME = ((Date)sdf.parse(s)).getTime();
+
+		return TIME;
+
 	}
 	
 }

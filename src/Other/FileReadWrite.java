@@ -58,8 +58,9 @@ public class FileReadWrite {
 			timeline = Integer.toString(min) + "," + Integer.toString(max);
 			System.out.println("共读入"+  count + "记录");
 			System.out.println("有效用户: " + db.data.size());
+		    System.out.println("时间线是" + timeline);
 			return timeline;
-		}
+	 }
 
 	public void fileWrite(String file, ViolentAlgorithm va, int max, Calendar c, Runtime rt) throws IOException{
 		File f = new File(file);
@@ -90,9 +91,6 @@ public class FileReadWrite {
 		//bw.write("算法内存消耗：" + (rt.totalMemory() - rt.freeMemory())/1024/1024 + "MB");
 		bw.close();
 	}
-	
-	
-	
 
 }
 
